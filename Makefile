@@ -7,5 +7,10 @@ build: $(MODULES_FILE)
 
 .PHONY: build
 
-$(MODULES_FILE): $(wildcard, $(TEST_INC_PATH)/*.d) $(PWD)/gen_modules.d
+$(MODULES_FILE): $(shell find $(PWD)/testbench/ -name "*.d")  $(PWD)/gen_modules.d
 	./gen_modules.d -I$(TEST_INC_PATH) -o$@
+
+e:
+	echo $(shell find $(PWD)/testbench/ -name "*.d")
+
+.PHONY: e

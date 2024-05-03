@@ -18,3 +18,7 @@ import bdd.types;
             /// 
     });
 };
+
+@scenario("nein") __ = {
+    given("a", {});
+};
